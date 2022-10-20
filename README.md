@@ -50,6 +50,16 @@ Telas de até o tamanho X (max-width)
 
 **Obs.:** não coloque nada além de `<Route>` no `<Switch>`
 
+#### Sintaxe alternativa para aplicar rotas:
+
+`<Route exact path="/" component={Home}>`
+
+`<Route path="/produtos" component={Produtos}>`
+
+`<Route path="/sobre" component={Sobre}>`
+
+`<Route path="/contato" component={Contato}>`
+
 ### Menu.jsx
 
 1. Importar o NavLink:
