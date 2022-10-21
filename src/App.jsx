@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Cabecalho from "./components/Cabecalho/Cabecalho";
 import Contato from "./pages/Contato/Contato";
 import Home from "./pages/Home/Home";
+import Pagina404 from "./pages/Pagina404/Pagina404";
 import Produtos from "./pages/Produtos/Produtos";
 import Sobre from "./pages/Sobre/Sobre";
 
@@ -24,6 +25,9 @@ const App = () => {
             </Route>
             <Route path="/contato">
               <Contato />
+            </Route>
+            <Route path="*">
+              <Pagina404 />
             </Route>
           </Switch>
         </main>
