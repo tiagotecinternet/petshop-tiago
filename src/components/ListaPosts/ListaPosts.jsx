@@ -29,11 +29,11 @@ const ListaPosts = () => {
 
   return (
     <div className={estilos.lista_posts}>
-      {posts.map((post) => {
+      {posts.map(({ id, titulo, subtitulo }) => {
         return (
-          <article className={estilos.post} key={post.id}>
-            <h3> {post.titulo} </h3>
-            <p>{post.subtitulo}</p>
+          <article className={estilos.post} key={id}>
+            <h3> {titulo} </h3>
+            <p>{subtitulo}</p>
           </article>
         );
       })}
