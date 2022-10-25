@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"; // Hooks do React
 
 import serverApi from "../../api/servidor-api";
+import LoadingDesenho from "../LoadingDesenho/LoadingDesenho";
 import estilos from "./ListaPosts.module.css";
 const ListaPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -21,9 +22,7 @@ const ListaPosts = () => {
   }, []);
 
   if (loading) {
-    return <mark style={{ backgroundColor: "red" }}>Carregando....</mark>;
-  } else {
-    return <mark>Carregado!</mark>;
+    return <LoadingDesenho />;
   }
 
   return (
