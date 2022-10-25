@@ -4,6 +4,7 @@ import serverApi from "../../api/servidor-api";
 import estilos from "./ListaPosts.module.css";
 const ListaPosts = () => {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getPosts() {
@@ -11,12 +12,19 @@ const ListaPosts = () => {
         const resposta = await fetch(`${serverApi}/posts`);
         const dados = await resposta.json();
         setPosts(dados);
+        setLoading(false);
       } catch (error) {
         console.log("Deu ruim! " + error.message);
       }
     }
     getPosts();
   }, []);
+
+  if (loading) {
+    return <mark style={{ backgroundColor: "red" }}>Carregando....</mark>;
+  } else {
+    return <mark>Carregado!</mark>;
+  }
 
   return (
     <div className={estilos.lista_posts}>
