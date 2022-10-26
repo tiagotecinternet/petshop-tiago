@@ -135,6 +135,12 @@ Se passar a lista vazia (ou seja, deixar o [] vazio), `useEffect` executará som
 
 ## CSS: uso da pseudo-classe :has()
 
-https://css-tricks.com/the-css-has-selector/
+Referências:
 
-https://webkit.org/blog/13096/css-has-pseudo-class/
+`https://edrodrigues.com.br/blog/where-is-has-novos-seletores-css-que-facilitam-sua-vida/`
+
+`https://www.youtube.com/watch?v=Ia_4XdisCGQ`
+
+`https://css-tricks.com/the-css-has-selector/`
+
+`https://webkit.org/blog/13096/css-has-pseudo-class/`
