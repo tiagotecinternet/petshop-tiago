@@ -1,6 +1,7 @@
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 import Cabecalho from "./components/Cabecalho/Cabecalho";
+import Categoria from "./pages/Categoria/Categoria";
 import Contato from "./pages/Contato/Contato";
 import Home from "./pages/Home/Home";
 import Pagina404 from "./pages/Pagina404/Pagina404";
@@ -26,6 +27,12 @@ const App = () => {
 
             <Route path="/posts/:id">
               <Post />
+            </Route>
+
+            {/* Estamos usando o :nome em vez de :id
+com o propósito de ter uma URL amigável (slug) */}
+            <Route exact path="/categoria/:nome">
+              <Categoria />
             </Route>
 
             <Route path="/produtos">
