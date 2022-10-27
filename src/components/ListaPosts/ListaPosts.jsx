@@ -38,7 +38,7 @@ const ListaPosts = ({ url }) => {
   }, [url]);
 
   if (loading) {
-    return <LoadingDesenho />;
+    return <LoadingDesenho texto="posts..." />;
   }
 
   return (
