@@ -4,7 +4,7 @@ import serverApi from "../../api/servidor-api";
 import ArtigoPost from "../ArtigoPost/ArtigoPost";
 import LoadingDesenho from "../LoadingDesenho/LoadingDesenho";
 import estilos from "./ListaPosts.module.css";
-const ListaPosts = (props) => {
+const ListaPosts = ({ url }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -14,9 +14,14 @@ const ListaPosts = (props) => {
         // const resposta = await fetch(`${serverApi}/posts`);
 
         // Solução Guilherme
-        // const resposta = await fetch(`${serverApi}/${props.url || "posts"}`);
+        // const resposta = await fetch(`${serverApi}/${url || "posts"}`);
 
-        const resposta = await fetch(`${serverApi}/${props.url}`);
+        // Solução Adriel
+        /* const resposta = await fetch(
+          `${serverApi}/${url != undefined ? url : "posts"}`
+        ); */
+
+        const resposta = await fetch(`${serverApi}/${url}`);
         const dados = await resposta.json();
         setPosts(dados);
         setLoading(false);
@@ -30,7 +35,7 @@ const ListaPosts = (props) => {
     
     Desta forma, o useEffect "entende" que ele deve executar novamente
     as suas ações (neste caso, executar novamente o fetch na API) */
-  }, [props.url]);
+  }, [url]);
 
   if (loading) {
     return <LoadingDesenho />;
