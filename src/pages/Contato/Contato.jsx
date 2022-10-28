@@ -1,7 +1,19 @@
 import { Button, TextField } from "@mui/material";
+import { useState } from "react";
 import Caixa from "../../components/Caixa/Caixa";
 import estilos from "./Contato.module.css";
+
 const Contato = () => {
+  /* Eventos/Funções para captura da digitação nos campos */
+  const inputNome = (event) => setNome(event.target.value);
+  const inputEmail = (event) => setEmail(event.target.value);
+  const inputMensagem = (event) => setMensagem(event.target.value);
+
+  /* Hook useState para manipular os estados dos dados do componente */
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [mensagem, setMensagem] = useState("");
+
   return (
     <section>
       <h2 className={estilos.titulo_secao}>Fale Conosco</h2>
@@ -10,6 +22,7 @@ const Contato = () => {
         <form className={estilos.formulario} method="post">
           <div>
             <TextField
+              onChange={inputNome}
               type="text"
               label="Nome"
               variant="outlined"
@@ -21,6 +34,7 @@ const Contato = () => {
 
           <div>
             <TextField
+              onChange={inputEmail}
               type="email"
               label="E-mail"
               variant="outlined"
@@ -32,6 +46,7 @@ const Contato = () => {
 
           <div>
             <TextField
+              onChange={inputMensagem}
               type="text"
               label="Mensagem"
               variant="outlined"
