@@ -1,5 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
+import serverApi from "../../api/servidor-api";
+
 import Caixa from "../../components/Caixa/Caixa";
 import estilos from "./Contato.module.css";
 
@@ -14,9 +16,24 @@ const Contato = () => {
   const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
 
-  const enviarContato = (event) => {
+  const enviarContato = async (event) => {
     event.preventDefault();
-    console.log(nome, email, mensagem);
+
+    const opcoes = {
+      method: "POST",
+      body: JSON.stringify({ nome, email, mensagem }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    };
+
+    /* Script para envio dos dados para a API */
+    try {
+      await fetch(`${serverApi}/contatos`, opcoes);
+      alert("Dados enviados!");
+    } catch (error) {
+      console.log("Deu ruim: " + error.message);
+    }
   };
 
   return (

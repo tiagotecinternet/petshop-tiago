@@ -71,5 +71,12 @@
       "categoria": "bem-estar"
     }
   ],
-  "contatos": []
+  "contatos": [
+    {
+      "nome": "Tiago B. dos Santos",
+      "email": "tiago.bsantos@sp.senac.br",
+      "mensagem": "Olá! Este é um teste....",
+      "id": 1
+    }
+  ]
 }
