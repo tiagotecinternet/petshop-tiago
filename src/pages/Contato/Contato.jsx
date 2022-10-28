@@ -16,7 +16,7 @@ const Contato = () => {
 
   const enviarContato = (event) => {
     event.preventDefault();
-    console.log("Formulário enviado!");
+    console.log(nome, email, mensagem);
   };
 
   return (
