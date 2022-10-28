@@ -9,6 +9,7 @@ const ListaPosts = ({ url }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     async function getPosts() {
       try {
         // const resposta = await fetch(`${serverApi}/posts`);
@@ -39,6 +40,10 @@ const ListaPosts = ({ url }) => {
 
   if (loading) {
     return <LoadingDesenho texto="posts..." />;
+  }
+
+  if (posts.length === 0) {
+    return <h2 style={{ textAlign: "center" }}> Não há posts!</h2>;
   }
 
   return (
