@@ -36,6 +36,15 @@ const Contato = () => {
     }
   };
 
+  // let desabilitado = nome === "" || email === "" || mensagem === "";
+
+  /* "Toggle" do botão: caso qualquer uma das variáveis seja undefined,
+  desabilitado se manterá true e com isso o botão ficará desabilitado.
+  
+  Quando todas deixarem de ser undefined, desabilitado se tornará false e
+  com isso o botão será habilitado. */
+  let desabilitado = !nome || !email || !mensagem;
+
   return (
     <section>
       <h2 className={estilos.titulo_secao}>Fale Conosco</h2>
@@ -84,7 +93,7 @@ const Contato = () => {
             />
           </div>
           <div>
-            <Button type="submit" variant="contained">
+            <Button type="submit" variant="contained" disabled={desabilitado}>
               Enviar mensagem
             </Button>
           </div>
