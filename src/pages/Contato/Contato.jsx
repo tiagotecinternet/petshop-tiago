@@ -14,12 +14,21 @@ const Contato = () => {
   const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
 
+  const enviarContato = (event) => {
+    event.preventDefault();
+    console.log("Formulário enviado!");
+  };
+
   return (
     <section>
       <h2 className={estilos.titulo_secao}>Fale Conosco</h2>
 
       <Caixa>
-        <form className={estilos.formulario} method="post">
+        <form
+          onSubmit={enviarContato}
+          className={estilos.formulario}
+          method="post"
+        >
           <div>
             <TextField
               onChange={inputNome}
