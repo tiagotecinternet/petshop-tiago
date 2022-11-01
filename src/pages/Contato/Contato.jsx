@@ -63,7 +63,7 @@ const Contato = () => {
               variant="outlined"
               fullWidth
               required
-              helperText="Você deve digitar o nome"
+              helperText={!nome ? "Você deve digitar o nome" : ""}
             />
           </div>
 
@@ -75,7 +75,7 @@ const Contato = () => {
               variant="outlined"
               fullWidth
               required
-              helperText="Informe um e-mail para contato"
+              helperText={!email ? "Informe um e-mail para contato" : ""}
             />
           </div>
 
@@ -87,7 +87,7 @@ const Contato = () => {
               variant="outlined"
               fullWidth
               required
-              helperText="Fale o que você quiser"
+              helperText={!mensagem ? "Fale o que você quiser" : ""}
               multiline
               rows={6}
             />
