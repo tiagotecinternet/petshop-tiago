@@ -12,19 +12,24 @@ const ListaPosts = ({ url }) => {
     setLoading(true);
     async function getPosts() {
       try {
-        // const resposta = await fetch(`${serverApi}/posts`);
+        const resposta = await fetch(`${serverApi}/posts.json`);
+        const dados = await resposta.json(); // OBJETÃO DE DADOS
 
-        // Solução Guilherme
-        // const resposta = await fetch(`${serverApi}/${url || "posts"}`);
+        let listaDePosts = [];
 
-        // Solução Adriel
-        /* const resposta = await fetch(
-          `${serverApi}/${url != undefined ? url : "posts"}`
-        ); */
+        for (const post in dados) {
+          const objetoPost = {
+            id: post,
+            titulo: dados[post].titulo,
+            subtitulo: dados[post].subtitulo,
+            descricao: dados[post].descricao,
+            categoria: dados[post].categoria,
+          };
 
-        const resposta = await fetch(`${serverApi}/${url}`);
-        const dados = await resposta.json();
-        setPosts(dados);
+          listaDePosts.push(objetoPost);
+        }
+
+        setPosts(listaDePosts);
         setLoading(false);
       } catch (error) {
         console.log("Deu ruim! " + error.message);
