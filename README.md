@@ -308,9 +308,9 @@ Isso fará com que os endpoints `categorias` e `posts` fiquem liberados para ace
 
 **Referências:**
 
-https://dev.to/guillerbr/deploy-reactjs-no-firebase-hosting-1l6f?utm_source=pocket_reader
+https://dev.to/guillerbr/deploy-reactjs-no-firebase-hosting-1l6f
 
-https://hackernoon.com/how-to-deploy-a-react-application-with-firebase-hosting-p92m37b7?utm_source=pocket_saves
+https://hackernoon.com/how-to-deploy-a-react-application-with-firebase-hosting-p92m37b7
 
 https://create-react-app.dev/docs/deployment/
 
