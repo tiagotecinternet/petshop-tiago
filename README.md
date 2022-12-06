@@ -230,3 +230,7 @@ O Service Worker está no centro de muitos recursos das chamadas **PWAs (Progres
 3. Usando o Insomnia (ou Postman) migramos os dados do `db.json` para os endpoints do banco de dados do Firebase (RealTime Database). Os endpoints usados foram: `categorias.json`, `posts.json` e `contatos.json`.
 4. Voltando ao VSCode, alteramos o endereço da API em `api/servidor-api.js` colocando o endereço do RealTime Database do projeto PetShop.
 5. Alteramos a programação dos arquivos: `ListaPosts.jsx`, `ListaCategorias.jsx`, `ListaPosts.jsx` e `Categoria.jsx`
+
+### 06/12
+
+6. Alteramos a programação dos arquivos: `Post.jsx` e `Contato.jsx`
