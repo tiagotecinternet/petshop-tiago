@@ -218,3 +218,15 @@ O Service Worker está no centro de muitos recursos das chamadas **PWAs (Progres
 7. Procure em sua área de trabalho (ou menu Iniciar) o ícone do app PetShop
 8. No Android acesse o menu do Chrome e procure por **Adicionar à tela inicial**
 9. No iOS acesse o menu do Safaria e procure por **Adicionar à tela de início**
+
+---
+
+## Migrando a API JSON Fake (json-server) para API online usando Firebase RealTime Database
+
+### 02/12
+
+1. No site Firebase adicionamos um novo serviço (RealTime Database) para o projeto PetShop
+2. Copiamos o endereço de acesso ao banco de dados (basta clicar no ícone de corrente)
+3. Usando o Insomnia (ou Postman) migramos os dados do `db.json` para os endpoints do banco de dados do Firebase (RealTime Database). Os endpoints usados foram: `categorias.json`, `posts.json` e `contatos.json`.
+4. Voltando ao VSCode, alteramos o endereço da API em `api/servidor-api.js` colocando o endereço do RealTime Database do projeto PetShop.
+5. Alteramos a programação dos arquivos: `ListaPosts.jsx`, `ListaCategorias.jsx`, `ListaPosts.jsx` e `Categoria.jsx`
