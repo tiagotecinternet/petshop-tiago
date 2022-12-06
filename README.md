@@ -230,3 +230,58 @@ O Service Worker está no centro de muitos recursos das chamadas **PWAs (Progres
 3. Usando o Insomnia (ou Postman) migramos os dados do `db.json` para os endpoints do banco de dados do Firebase (RealTime Database). Os endpoints usados foram: `categorias.json`, `posts.json` e `contatos.json`.
 4. Voltando ao VSCode, alteramos o endereço da API em `api/servidor-api.js` colocando o endereço do RealTime Database do projeto PetShop.
 5. Alteramos a programação dos arquivos: `ListaPosts.jsx`, `ListaCategorias.jsx`, `ListaPosts.jsx` e `Categoria.jsx`
+
+### 06/12
+
+6. Alteramos a programação dos arquivos: `Post.jsx` e `Contato.jsx`
+
+#### Preparação para publicação
+
+1. Fizemos o **build** do app petshop usando o comando `npm run build`
+
+Fazer o **build** de uma aplicação nada mais é do que transformar o projeto em uma aplicação pronta para produção, permitindo a publicação e utilização por usuários finais. O **build** gera uma versão otimizada e mais leve. Obs.: a pasta **build** não deve ser versionada.
+
+2. Para testar a versão **build** do projeto, precisamos instalar a lib `serve` usando `npm install -g serve`
+3. Para executar, basta rodar o comando `serve -s build`
+
+Lembrando que na versão **build** não há atualização automática de qualquer mudança que o(a) programador(a) faça.
+Portanto, caso você mude algo no projeto, será necessário fazer o **build** novamente.
+
+#### Publicação no Firebase Hosting
+
+1. No Firebase Console (painel de controle do Firebase) adicionamos o serviço Hosting para o projeto PetShop
+2. Instalamos a lib de ferramentas CLI do Firebase: `npm install -g firebase-tools`
+3. Ainda via linha de comando, logamos no Firebase usando `firebase login`
+4. Após logar, inicializamos o projeto para publicação: `firebase init`
+5. Na sequência, fique atento quanto as perguntas que serão exibidas na tela e respostas que você terá que fornecer:
+
+   - _Are you ready to proceed?_
+
+   Digite **Y** e enter.
+
+   - _Which Firebase features do you want to set up for this directory? Press Space to sel
+     ect features, then Enter to confirm your choices._
+
+   Use as setas para chegar até **Hosting: Configure files for Firebase Hosting...**, pressione a tecla espaço para selecionar e depois enter.
+
+   - _What do you want to use as your public directory? (public)_
+
+   Digite **build** e dê enter.
+
+   - _Configure as a single-page app (rewrite all urls to /index.html)?_
+
+   Digite **Y** e enter.
+
+   - _Set up automatic builds and deploys with GitHub?_
+
+   Digite **N** e enter.
+
+   - _File build/index.html already exists. Overwrite?_
+
+   Digite **N** e enter.
+
+6. Veja que dois arquivos foram criados: `firebase.json` e `.firebaserc`. Não é necessário mexer neles.
+7. Por fim, digite `firebase deploy` para iniciar o processo de publicação do app no Firebase.
+8. Ao término, será apresentada a URL para acesso de sua aplicação. Exemplo:
+
+Hosting URL: https://petshop-c5e36.web.app
