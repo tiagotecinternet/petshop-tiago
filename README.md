@@ -305,3 +305,17 @@ Substitua as regras de segurança atuais por :
 ```
 
 Isso fará com que os endpoints `categorias` e `posts` fiquem liberados para acesso de leitura e bloqueados para acesso de escrita, e que somente o endpoint de `contatos` (usado pelo formulário de contato) fique liberado para escrita.
+
+**Referências:**
+
+https://dev.to/guillerbr/deploy-reactjs-no-firebase-hosting-1l6f?utm_source=pocket_reader
+
+https://hackernoon.com/how-to-deploy-a-react-application-with-firebase-hosting-p92m37b7?utm_source=pocket_saves
+
+https://create-react-app.dev/docs/deployment/
+
+https://create-react-app.dev/docs/deployment/#firebase
+
+https://stackoverflow.com/questions/33916448/how-to-change-firebase-user-login-identity-from-command-line-cli
+
+https://gist.github.com/codediodeio/6dbce1305b9556c2136492522e2100f6
