@@ -285,3 +285,23 @@ Portanto, caso você mude algo no projeto, será necessário fazer o **build** n
 8. Ao término, será apresentada a URL para acesso de sua aplicação. Exemplo:
 
 Hosting URL: https://petshop-c5e36.web.app
+
+**Dica para regra de segurança no RealTime Database**
+
+No Firebase Console, acesse o painel do RealTime Database e entre na guia **Regras**.
+
+Substitua as regras de segurança atuais por :
+
+```json
+{
+  "rules": {
+    "contatos": {
+      ".write": true
+    },
+    ".read": true,
+    ".write": false
+  }
+}
+```
+
+Isso fará com que os endpoints `categorias` e `posts` fiquem liberados para acesso de leitura e bloqueados para acesso de escrita, e que somente o endpoint de `contatos` (usado pelo formulário de contato) fique liberado para escrita.
